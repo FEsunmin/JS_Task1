@@ -20,18 +20,16 @@ function movieData(datas) {
       cardFlex.appendChild(movieCard);
 
       movieCard.addEventListener('click', () => {
-        showCardId(movies.id);
+        showId(movies.id);
       })
   });
 }
 
   function createCard(movie) {
-    const cardFlex = document.querySelector(".card-flex");
-  
     const movieImage = movie.poster_path;
     const movieTitle = movie.title;
     const overview = movie.overview;
-    const vote_average = movie.vote_average;
+    const vote_average = movie.vote_average.toFixed(2);
   
     const movieCard = document.createElement('div');
     movieCard.classList.add('card');
@@ -41,29 +39,24 @@ function movieData(datas) {
     movieCard.innerHTML = 
       `
         <div class="cardFrame>
-          <div class="card-header">
-            <img src="https://image.tmdb.org/t/p/w300${movieImage}" class="card-img-top posterImg" alt="Movie Poster"/>
+          <div class="cardHeader">
+            <img src="https://image.tmdb.org/t/p/w300${movieImage}" class="posterImg" alt="poster"/>
           </div>
 
           <div class="card-body">
-            <h5 class="card-title movieTitle">${movieTitle}</h5>
+            <h5 class="movieTitle">${movieTitle}</h5>
             <div class="textFrame">
-              <p class="card-text movieOverview">Overview: <br>${overview}</p>
-              <p class="card-text movieVote">Vote Average: <br>${vote_average}</p>
+              <p class="movieOverview">줄거리 요약<br>${overview}</p>
+              <p class="movieVote">평점<br>${vote_average} 점</p>
             </div>
           </div>
         <div>
 
       `;
-  
     return movieCard;
   }
 
-  function showCardId(id) {
-    alert(`해당 영화의 아이디 값은 : ${id}번 입니다`);
-  }
-
-  // 검색 기능
+  // 영화 검색
   const searchInput = document.getElementById('searchBar');
   searchInput.addEventListener('input', () => {
     const searchTerm = searchInput.value.toLowerCase();
@@ -74,3 +67,8 @@ function movieData(datas) {
       card.style.display = title.includes(searchTerm) ? 'block' : 'none';
     });
   });
+
+  // 영화 아이디 알림창
+  function showId(id) {
+    alert(`해당 영화의 아이디 값은 : ${id}번 입니다`);
+  }
