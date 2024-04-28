@@ -1,0 +1,124 @@
+.movie-list {
+    width: 100%;
+    height: 100%;
+}
+
+.movieTitle {
+    font-size: 24px;
+    text-align: center;
+}
+
+.movieSearch-frame {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.movieSearch {
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.card-flex {
+    width: 100%;
+	display: grid;
+    row-gap: 100px;
+    grid-gap: 50px;
+    column-gap: 50px;
+    place-items: center;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    margin-top: 100px;
+}
+
+@media screen and (min-width: 700px){
+    .card-flex {
+        grid-template-columns: 1fr 1fr ;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .card-flex {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .card-flex {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* .movieCard {
+    width: 300px;
+    height: 620px;
+    border: 1px solid;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 1px solid lightgray;
+} */
+
+.posterImg {
+    width: 250px;
+    height: 350px;
+}
+
+.textFrame {
+    width: 100%;
+}
+
+.movieCard {
+    position: relative;
+    width: 250px;
+    height: 350px;
+}
+
+.movieCard .posterImg {
+    width: 100%;
+}
+
+.movieCard .card-body {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    color: #fff;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+    transition: opacity 0.35s ease-in-out;
+    position: absolute; left: 0; bottom: 0;
+}
+
+.movieCard:hover .card-body {
+    opacity: 1;
+}
+
+.movieCard .card-body .movieTitle {
+    font-size: 24px;
+    overflow:hidden;
+    white-space: nowrap;
+    padding-bottom: 0.4em;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+
+.movieCard .card-body .movieOverview {
+    font-size: 16px;
+    overflow: hidden;
+    max-height: 9.8em;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+
+.movieCard .card-body .movieVote {
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
