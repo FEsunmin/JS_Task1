@@ -20,7 +20,7 @@ function movieData(datas) {
       cardFlex.appendChild(movieCard);
 
       movieCard.addEventListener('click', () => {
-        showId(movies.id);
+        movieId(movies.id);
       })
   });
 }
@@ -34,7 +34,6 @@ function movieData(datas) {
     const movieCard = document.createElement('div');
     movieCard.classList.add('card');
     movieCard.classList.add('movieCard');
-    movieCard.style.width = '18rem';
   
     movieCard.innerHTML = 
       `
@@ -56,6 +55,11 @@ function movieData(datas) {
     return movieCard;
   }
 
+    // 영화 아이디 알림창
+    function movieId(id) {
+      alert(`해당 영화의 아이디 값은 : ${id}번 입니다`);
+    }  
+
   // 영화 검색
   const searchInput = document.getElementById('searchBar');
   searchInput.addEventListener('input', () => {
@@ -67,8 +71,3 @@ function movieData(datas) {
       card.style.display = title.includes(searchTerm) ? 'block' : 'none';
     });
   });
-
-  // 영화 아이디 알림창
-  function showId(id) {
-    alert(`해당 영화의 아이디 값은 : ${id}번 입니다`);
-  }

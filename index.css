@@ -60,20 +60,21 @@
 }
 
 .movieCard {
-    width: 250px;
+    width: 260px;
     height: 350px;
     position: relative;
 }
 
-.posterImg {
+/* .posterImg {
     width: 250px;
     height: 350px;
     border-radius: 20px;
     border:  1px solid rgb(240, 240, 240);
-}
+} */
 
 .movieCard .posterImg {
     width: 100%;
+    border-radius: 20px;
 }
 
 .movieCard .card-body {
