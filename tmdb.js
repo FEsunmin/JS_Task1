@@ -42,7 +42,7 @@ function createCard(movie) {
           </div>
 
           <div class="card-body">
-            <h5 class="movieTitle">${movieTitle}</h5>
+            <h1 class="movieTitle">${movieTitle}</h1>
             <div class="textFrame">
               <p class="movieOverview">줄거리 요약<br>${overview}</p>
               <p class="movieVote">평점<br>${vote_average} 점</p>
