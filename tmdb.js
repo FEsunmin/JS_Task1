@@ -56,7 +56,7 @@ function createCard(movie) {
 
 // 영화 아이디 알림창
 function movieId(id) {
-  swal.fire(`해당 영화의 id 값은 : ${id}번 입니다`);
+  swal.fire("해당 영화의 id 값은", `${id}번 입니다`);
 }
 
 // 영화 검색
