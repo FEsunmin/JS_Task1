@@ -1,3 +1,4 @@
+// Api 연결
 function tmdbApi() {
   const apiKey = "f5475cb87195d22e7fbee353e3247ba5";
   const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;
@@ -7,7 +8,6 @@ function tmdbApi() {
     .then((data) => movieData(data.results))
     .catch((error) => console.error("Error fetching movies:", error));
 }
-
 document.addEventListener("DOMContentLoaded", function () {
   tmdbApi();
 });
