@@ -65,7 +65,7 @@ function movieId(id) {
 const searchInput = document.getElementById("searchBar");
 searchInput.addEventListener("input", () => {
   const searchTerm = searchInput.value.toLowerCase();
-  const movieCards = Array.from(document.querySelectorAll(".movieCard"));
+  const movieCards = Array.from(document.getElementsByClassName("movieCard"));
 
   movieCards.forEach((card) => {
     const title = card.querySelector(".movieTitle").textContent.toLowerCase();
