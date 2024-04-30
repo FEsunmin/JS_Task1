@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   tmdbApi();
 });
 
+// 영화 데이터 처리
 function movieData(datas) {
   const cardFlex = document.getElementById("cardFlex");
 
@@ -25,6 +26,7 @@ function movieData(datas) {
   });
 }
 
+// 영화 카드 생성
 function createCard(movie) {
   const movieImage = movie.poster_path;
   const movieTitle = movie.title;
@@ -37,7 +39,7 @@ function createCard(movie) {
 
   movieCard.innerHTML = `
         <article class="cardFrame>
-          <div class="cardHeader">
+          <div class="cardImg">
             <img src="https://image.tmdb.org/t/p/w300${movieImage}" class="posterImg" alt="poster"/>
           </div>
 
